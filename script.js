@@ -1,28 +1,48 @@
 let display = document.getElementById('display');
+let rawInput = "";
+let displayInput = "";
 
 function append(value) {
-    if (value === '(' && /\d$/.test(display.innerText)) {
-        display.innerText += '*(';
-        return;
-    }
 
-   if (display.innerText === '0') {
-       display.innerText = value;
-   } else {
-       display.innerText += value;
-   }
+  if (value === '**2') {
+    rawInput += '**2';
+    displayInput += '²';
+  } 
+  else if (value === '**') {
+    rawInput += '**';
+    displayInput += '^';
+  } 
+  else if (value === 'sqrt(') {
+    rawInput += 'sqrt(';
+    displayInput += '√(';
+  }
+  else if (value === 'cbrt(') {
+    rawInput += 'cbrt(';
+    displayInput += '∛(';
+  }
+  else if (value === '%') {
+    rawInput += '/100';
+    displayInput += '%';
+  }
+  else {
+    rawInput += value;
+    displayInput += value;
+  }
+
+  display.innerText = displayInput;
 }
 
 function clearDisplay() {
    display.innerText = '0';
+   rawInput = "";
+   displayInput = "";
 }
 
 function deleteLast() {
-   if (display.innerText.length > 1) {
-       display.innerText = display.innerText.slice(0, -1) || '0';
-   } else {
-       display.innerText = '0';
-   }
+  rawInput = rawInput.slice(0, -1);
+  displayInput = displayInput.slice(0, -1);
+
+  display.innerText = displayInput || "0";
 }
 
 function handleBracket() {
@@ -41,19 +61,24 @@ function calculate() {
   try {
     let expression = rawInput;
 
-    // % → (x/100)
-    expression = expression.replace(/(\d+(\.\d+)?)%/g, "($1/100)");
-
-    // sqrt → Math.sqrt
+    // Square root
     expression = expression.replace(/sqrt\(/g, "Math.sqrt(");
 
+    // Cube root (if you used **(1/3), this already works)
+    // No need to replace if you're appending correctly
+    expression = expression.replace(/cbrt\(/g, "Math.cbrt(");
+
+    // Evaluate
     let result = Function('"use strict"; return (' + expression + ')')();
 
     rawInput = result.toString();
-    display.innerText = formatNumber(rawInput);
+    displayInput = result.toString();
+
+    display.innerText = displayInput;
 
   } catch (e) {
     display.innerText = 'Error';
     rawInput = "";
+    displayInput = "";
   }
 }
