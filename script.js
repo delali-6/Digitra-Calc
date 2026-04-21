@@ -3,26 +3,18 @@ let rawInput = "";
 let displayInput = "";
 
 function append(value) {
-
-  if (value === '**2') {
-    rawInput += '**2';
-    displayInput += '²';
-  } 
-  else if (value === '**') {
-    rawInput += '**';
-    displayInput += '^';
-  } 
-  else if (value === 'sqrt(') {
-    rawInput += 'sqrt(';
-    displayInput += '√(';
-  }
-  else if (value === 'cbrt(') {
-    rawInput += 'cbrt(';
-    displayInput += '∛(';
-  }
-  else if (value === '%') {
+ 
+    if (value === '%') {
     rawInput += '/100';
     displayInput += '%';
+  }
+  else if (value === '*') {
+    rawInput += '*';
+    displayInput += '×';
+  }
+  else if (value === '/') {
+    rawInput += '/';
+    displayInput += '÷';
   }
   else {
     rawInput += value;
@@ -61,13 +53,6 @@ function calculate() {
   try {
     let expression = rawInput;
 
-    // Square root
-    expression = expression.replace(/sqrt\(/g, "Math.sqrt(");
-
-    // Cube root (if you used **(1/3), this already works)
-    // No need to replace if you're appending correctly
-    expression = expression.replace(/cbrt\(/g, "Math.cbrt(");
-
     // Evaluate
     let result = Function('"use strict"; return (' + expression + ')')();
 
@@ -80,5 +65,17 @@ function calculate() {
     display.innerText = 'Error';
     rawInput = "";
     displayInput = "";
+  }
+}
+
+function toggleLargeMode() {
+  document.body.classList.toggle("large-mode");
+
+  let btn = document.getElementById("toggleLarge");
+
+  if (document.body.classList.contains("large-mode")) {
+    btn.innerText = "🔎 Normal Mode";
+  } else {
+    btn.innerText = "🔍 Large Mode";
   }
 }

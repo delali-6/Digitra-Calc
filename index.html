@@ -9,6 +9,7 @@
 <body>
     <main>
         <div class="calculator">
+            <button class="toggle" id="toggleLarge" onclick="toggleLargeMode()">🔍Large Mode</button>
             <div class="display" id="display">0</div>
                 <div class="buttons">
                     <button class="clearDisplay" onclick="clearDisplay()">CE</button>
@@ -17,31 +18,26 @@
                     <button class="operators" onclick="append('%')">%</button>
                     <button class="delete" onclick="deleteLast()">⌫</button>
 
-                    <button class="operators" onclick="append('sqrt(')">√</button>
-                    <button class="operators" onclick="append('**2')">x²</button>
-                    <button class="operators" onclick="append('cbrt(')">∛</button>
-                    <button class="operators" onclick="append('**')">xʸ</button>
-
                     <button class="numbers" onclick="append('7')">7</button>
                     <button class="numbers" onclick="append('8')">8</button>   
                     <button class="numbers" onclick="append('9')">9</button>
-                    <button class="operators" onclick="append('*')">×</button>
-
+                    <button class="operators" onclick="append('+')">+</button>
+                    
                     <button class="numbers" onclick="append('4')">4</button>
                     <button class="numbers" onclick="append('5')">5</button>
                     <button class="numbers" onclick="append('6')">6</button>
-                    <button class="operators" onclick="append('-')">-</button>
+                    <button class="operators" onclick="append('*')">×</button>
 
                     <button class="numbers" onclick="append('1')">1</button>
                     <button class="numbers" onclick="append('2')">2</button>
                     <button class="numbers" onclick="append('3')">3</button>
-                    <button class="operators" onclick="append('+')">+</button>
-                    
+                    <button class="operators" onclick="append('-')">-</button>
 
                     <button class="zero" onclick="append('0')">0</button>
                     <button class="numbers" onclick="append('.')">.</button>
-                    <button class="operators" onclick="append('/')">÷</button>
                     <button class="equals" onclick="calculate()">=</button>
+                    <button class="operators" onclick="append('/')">÷</button>
+                    
                 </div>
         </div>
 
