@@ -34,7 +34,10 @@ body {
     height: 80px;
 }
 .large-mode .calculator {
-    width: 400px;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    font-size: 32px;
 }
 .calculator {
     background-color: #1E293B;
