@@ -1,0 +1,26 @@
+{
+  "name": "digitra-calc",
+  "version": "1.0.0",
+  "description": "This is for future use of the project because I am about to simplify the code instead of expanding it due to my purpose. My purpose for this current calculator is to make it as simple as possible while still being functional. I will be removing some features that I think are not necessary for a basic calculator, such as the ability to calculate square roots and cube roots. I will also be simplifying the code by removing some of the functions that are not essential for the basic functionality of the calculator. I will also be changing the design of the calculator to make it more user-friendly and visually appealing for seniors.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delali-6/Digitra-Calc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/delali-6/Digitra-Calc/issues"
+  },
+  "homepage": "https://github.com/delali-6/Digitra-Calc#readme",
+  "dependencies": {
+    "@capacitor/android": "^8.3.1",
+    "@capacitor/cli": "^8.3.1",
+    "@capacitor/core": "^8.3.1"
+  }
+}

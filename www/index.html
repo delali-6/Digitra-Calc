@@ -9,8 +9,12 @@
 <body>
     <main>
         <div class="calculator">
-            <button class="toggle" id="toggleLarge" onclick="toggleLargeMode()">🔍Large Mode</button>
-            <div class="display" id="display">0</div>
+            <div class="display" id="display"></div>
+            <div class="utility-bar">
+                <button class="light-mode" id="toggleLarge" onclick="toggleLargeMode()">🔍</button>
+                <button class="toggle-contrast" id="toggleContrast" onclick="toggleContrastMode()">☀️</button>
+                <button id="historyBtn">🕘</button>
+            </div>
                 <div class="buttons">
                     <button class="clearDisplay" onclick="clearDisplay()">CE</button>
                     <button class="operators" onclick="handleBracket()">()</button>
@@ -40,8 +44,7 @@
                     
                 </div>
         </div>
-
-        <script src="script.js"></script>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>

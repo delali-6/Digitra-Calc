@@ -25,7 +25,7 @@ function append(value) {
 }
 
 function clearDisplay() {
-   display.innerText = '0';
+   display.innerText = '';
    rawInput = "";
    displayInput = "";
 }
@@ -74,8 +74,20 @@ function toggleLargeMode() {
   let btn = document.getElementById("toggleLarge");
 
   if (document.body.classList.contains("large-mode")) {
-    btn.innerText = "🔎 Normal Mode";
+    btn.innerText = "🔎";
   } else {
-    btn.innerText = "🔍 Large Mode";
+    btn.innerText = "🔍";
+  }
+}
+
+function toggleContrastMode() {
+  document.body.classList.toggle("light-mode");
+
+  let btn = document.getElementById("toggleContrast");
+
+  if (document.body.classList.contains("light-mode")) {
+    btn.innerText = "🌙";
+  } else {
+    btn.innerText = "☀️";
   }
 }

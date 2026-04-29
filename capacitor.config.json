@@ -1,0 +1,6 @@
+{
+  "appId": "com.digitracalc.app",
+  "appName": "Digitra Calc",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
