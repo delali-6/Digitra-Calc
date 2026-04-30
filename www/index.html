@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Digitra Calc</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -13,7 +13,6 @@
             <div class="utility-bar">
                 <button class="light-mode" id="toggleLarge" onclick="toggleLargeMode()">🔍</button>
                 <button class="toggle-contrast" id="toggleContrast" onclick="toggleContrastMode()">☀️</button>
-                <button id="historyBtn">🕘</button>
             </div>
                 <div class="buttons">
                     <button class="clearDisplay" onclick="clearDisplay()">CE</button>
@@ -40,8 +39,7 @@
                     <button class="zero" onclick="append('0')">0</button>
                     <button class="numbers" onclick="append('.')">.</button>
                     <button class="equals" onclick="calculate()">=</button>
-                    <button class="operators" onclick="append('/')">÷</button>
-                    
+                    <button class="operators" onclick="append('/')">÷</button>    
                 </div>
         </div>
     </main>

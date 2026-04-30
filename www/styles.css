@@ -19,12 +19,13 @@ main {
 /* Toggle large button styles */
 #toggleLarge,
 #toggleContrast {
-    font-size: clamp(18px, 3vw, 24px);
+    font-size: clamp(20px, 3vw, 30px);
     padding: 6px 12px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     backdrop-filter: blur(6px);
+    touch-action: manipulation;
 }
 
 
@@ -36,14 +37,14 @@ main {
 }
 
 .large-mode button {
-    font-size: clamp(22px, 5vw, 36px);
+    font-size: clamp(22px, 5vw, 38px);
 }
 
 .large-mode .calculator {
     width: 100%;
     max-width: 500px;
     padding: 0;
-    font-size: 32px;
+    font-size: clamp(40px, 4vw, 60px);
 }
 
 /* Base calculator styles in its entirety */
@@ -53,12 +54,12 @@ main {
     max-width: none;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 97vh;
 }
 
 /* Display area styles */
 .display {
-    height: 27vh;
+    height: 20vh;
     padding: 20px;
     font-size: clamp(40px, 6vw, 60px);
     display: flex;
@@ -87,14 +88,14 @@ main {
 .utility-bar button {
     background: transparent;
     border: none;
-    
-    font-size: 20px;
+    font-size: clamp(18px, 3vw, 32px);
     width: 40px;
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
     left: 10px;
     color: rgba(255,255,255,0.7);
+    touch-action: manipulation;
 }
 
 /* Light mode styles */
@@ -108,26 +109,29 @@ body.light-mode .display {
 }
 body.light-mode #toggleLarge, body.light-mode #toggleContrast {
     font-weight: bold;
-    font-size: clamp(18px, 3vw, 24px);
+    font-size: clamp(20px, 3vw, 30px);
 }
 body.light-mode button {
     background-color: #E2E8F0;
     color: #1E293B;
     border: 2px solid #94A3B8;
     font-weight: bold;
-    font-size: clamp(18px, 4vw, 28px);
+    font-size: clamp(18px, 4vw, 32px);
+    touch-action: manipulation;
 }
 body.light-mode .utility-bar button {
     background-color: #C7D2FE;
     color: #1E293B;
     border: 2px solid #94A3B8;
     font-weight: bold;
-    font-size: clamp(18px, 4vw, 24px);
+    font-size: clamp(18px, 4vw, 32px);
+    touch-action: manipulation;
 }
 body.light-mode .operators, body.light-mode .delete, body.light-mode .equals, body.light-mode .clearDisplay {
     background-color: #C7D2FE;
     font-weight: bold;
-    font-size: clamp(18px, 4vw, 28px);
+    font-size: clamp(18px, 4vw, 32px);
+    touch-action: manipulation;
 }
 /* Base button styles */
 .buttons {
@@ -137,16 +141,18 @@ body.light-mode .operators, body.light-mode .delete, body.light-mode .equals, bo
     gap: 10px;
     width: 100%;
     flex-grow: 1;
+    margin-bottom: 10px;
 }
 
 button {
     background-color: #3730A3;
     color: #FFFFFF;
-    font-size: clamp(18px, 4vw, 28px); /* Scales with screen */
+    font-size: clamp(18px, 4vw, 32px); /* Scales with screen */
     border: none;
     border-radius: 15px;
     cursor: pointer;
     padding: 0; /* Let grid control size */
+    touch-action: manipulation; /* Improves responsiveness on touch devices */
 }
 
 button:active {
@@ -156,6 +162,7 @@ button:active {
 .operators {
     background-color: #6366F1;
     font-weight: bold;
+    font-size: clamp(18px, 4vw, 32px);
 }
 .operators:hover {
     background-color: #4F46E5;
@@ -164,6 +171,7 @@ button:active {
 .numbers, .zero {
     background-color: #334155;
     font-weight: bold;
+    font-size: clamp(18px, 4vw, 32px);
 }
 .numbers:hover, .zero:hover {
     background-color: #475569;
@@ -172,6 +180,7 @@ button:active {
 .delete {
     background-color: #EF4444;
     font-weight: bold;
+    font-size: clamp(18px, 4vw, 32px);
 }
 .delete:hover {
     background-color: #DC2626;
@@ -179,6 +188,7 @@ button:active {
 .equals {
     background-color: #8B5CF6;
     font-weight: bold;
+    font-size: clamp(18px, 4vw, 32px);
 }
 .equals:hover {
     background-color: #7C3AED;
@@ -186,6 +196,7 @@ button:active {
 .clearDisplay {
     background-color: #6366F1;
     font-weight: bold;
+    font-size: clamp(18px, 4vw, 32px);
 }
 .clearDisplay:hover {
     background-color: #374151;
